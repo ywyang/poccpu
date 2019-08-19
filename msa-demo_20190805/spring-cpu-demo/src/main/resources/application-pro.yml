@@ -1,0 +1,22 @@
+server:
+  port: 8080
+  
+spring:
+  application:
+    name: cpu-test-server
+  jpa:
+    database: MYSQL
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      naming:
+        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: false
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${mysql.host}:3306/bookinfo?useUnicode=true&characterEncoding=utf-8
+    username: ${mysql.user}
+    password: ${mysql.password}
